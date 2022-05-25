@@ -2,7 +2,7 @@ import React from 'react'
 import './App.scss'
 import {Header} from './Components';
 import {Home, Cart} from "./Pages";
-import {Route} from 'react-router-dom';
+import {Routes, Route} from "react-router-dom";
 
 function App() {
 
@@ -11,10 +11,20 @@ function App() {
 
 
         <div className="wrapper">
-            <Header />
+            <Header/>
             <div className="content">
-                <Route path="/" component={Home} exact/>
-                <Route path="/cart" component={Cart} exact/>
+                <Routes>
+                    <Route exact path="/" element={
+                        <>
+                            <Home route="/"/>
+                        </>
+                    }/>
+                    <Route exact path="/cart" element={
+                        <>
+                            <Cart route="/cart"/>
+                        </>
+                    }/>
+                </Routes>
             </div>
         </div>
 
