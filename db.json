@@ -1,0 +1,157 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl":"https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/7/vok-bolshaya-main_image-7243-79132.jpg",
+      "name": "Пеперони с перцем",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+
+      ],
+      "price": 500,
+      "category": 0,
+      "rating":50
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/3/italyancy-v-rossii-bolshaya-main_image-3571-17005.jpg",
+      "name": "Курица грибы",
+      "types": [
+        0
+
+      ],
+      "sizes": [
+        26,
+        30
+
+      ],
+      "price": 399,
+      "category": 1,
+      "rating":30
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/3/pepperoni-bolshaya-main_image-3612-77066.jpg",
+      "name": "Пеперони пицца",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30
+
+      ],
+      "price": 450,
+      "category": 2,
+      "rating":21
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/3/don-bekon-bolshaya-main_image-3514-10334.jpg",
+      "name": "Бекон пицца",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 550,
+      "category": 3,
+      "rating":76
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/5/piccburger-bolshaya-main_image-5608-44484.jpg",
+      "name": "Пицца бьургер",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30
+      ],
+      "price": 650,
+      "category": 3,
+      "rating": 96
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/7/picca-schastya-bolshaya-main_image-7171-56295.jpg",
+      "name": "Пицца Счастья",
+      "types": [
+        0
+
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 850,
+      "category": 1,
+      "rating": 120
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/7/gribnaya-bolshaya-main_image-7167-74467.jpg",
+      "name": "Грибная",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 699,
+      "category": 1,
+      "rating": 210
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://cdpiz1.pizzasoft.ru/rs/280x280/pizzafab/items/3/myasnoe-plato-bolshaya-main_image-3598-69427.jpg",
+      "name": "Мясное Плато",
+      "types": [
+
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 478,
+      "category": 1,
+      "rating": 301
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Чизбургер-пицца",
+      "types": [
+        0
+
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 478,
+      "category": 4,
+      "rating":205
+    }
+  ]
+}
