@@ -27,9 +27,7 @@ function PizzaBlock({
         setActiveType(index);
 
     }
-    {
 
-    }
     const onSelectSize = (index) => {
 
         setActiveSize(index);
@@ -95,6 +93,7 @@ function PizzaBlock({
                     </svg>
                     <span>Добавить</span>
                     {addedCount &&
+
                     <i>{addedCount}</i>}
                 </ Button>
             </div>

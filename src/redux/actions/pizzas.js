@@ -6,6 +6,7 @@ export const setLoaded = payload=>({
     payload,
 
 })
+// https://628ff680dc4785236549b85d.mockapi.io/items
  export const fetchPizzas= (sortBy,category)=> (dispatch) =>{
     dispatch(setLoaded(false));
       axios.get(`http://localhost:3001/pizzas?${
