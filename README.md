@@ -1,1 +1,1 @@
-https://f4rr311.github.io/pizza/
+https://f4rr311.github.io/pizza-react/
