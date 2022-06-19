@@ -8,7 +8,6 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
-import {SearchContext} from '../App';
 import {sortList} from '../components/Sort';
 
 import {
@@ -28,8 +27,11 @@ const Home = () => {
     const {items, status} = useSelector(selectPizzaData);
     const {categoryId, sort, currentPage, searchValue} = useSelector(selectFilter);
 
+
     const onChangeCategory = (id) => {
-        dispatch(setCategoryId(id));
+       //  иной синтаксис
+        // dispatch({type: 'filters/setCategoryId', payload:id});
+      dispatch(setCategoryId(id));
     };
 
     const onChangePage = (number) => {
@@ -50,7 +52,7 @@ const Home = () => {
         window.scrollTo(0, 0);
     };
 
-    // Если изменили параметры и был первый рендер
+    // Передаем сортировку в адресную строку
     React.useEffect(() => {
         if (isMounted.current) {
             const params = {
@@ -104,7 +106,7 @@ const Home = () => {
             {status === 'error' ? (
                 <div className="content__error-info">
                     <h2>Произошла ошибка 😕</h2>
-                    <p>К сожалению, не удалось получить питсы. Попробуйте повторить попытку позже.</p>
+                    <p>К сожалению, не удалось получить пиццы. Попробуйте повторить попытку позже.</p>
                 </div>
             ) : (
                 <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
