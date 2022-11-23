@@ -32,7 +32,6 @@ const cartSlice = createSlice({
         },
 
 
-
         minusItem(state, action) {
             const findItem = state.items.find((obj) => obj.id === action.payload);
             if (findItem) {
@@ -51,6 +50,7 @@ const cartSlice = createSlice({
 });
 
 export const selectCart = (state) => state.cart;
+
 export const selectCartItemById = (id) => (state) => state.cart.items.find((obj) => obj.id === id);
 
 export const {addItem, removeItem, minusItem, clearItems} = cartSlice.actions;
