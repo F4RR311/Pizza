@@ -13,7 +13,7 @@ export const sortList = [
 
 function Sort() {
     const dispatch = useDispatch();
-    const sort = useSelector(state => state.filter.sort);
+    const sort = useSelector(selectSort);
 
     const sortRef = React.useRef();
 
