@@ -101,22 +101,23 @@ const Home: React.FC = () => {
     return (
         <div className="container">
             <div className="content__top">
-                <Categories value={categoryId} onChangeCategory={onChangeCategory}/>
-                <Sort/>
-            </div>
-            <h2 className="content__title">Все пиццы</h2>
-            {status === 'error' ? (
-                <div className="content__error-info">
-                    <h2>Произошла ошибка 😕</h2>
-                    <p>К сожалению, не удалось получить пиццы. Попробуйте повторить попытку позже.</p>
-                </div>
-            ) : (
-                <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
-            )}
-
-            <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
+                <Categories value={categoryId} onChangeCategory={onChangeCategory} />
+            <Sort/>
         </div>
-    );
+    <h2 className="content__title">Все пиццы</h2>
+{status === 'error' ? (
+    <div className="content__error-info">
+        <h2>Произошла ошибка 😕</h2>
+        <p>К сожалению, не удалось получить пиццы. Попробуйте повторить попытку позже.</p>
+    </div>
+) : (
+    <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
+)}
+
+    <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
+</div>
+)
+    ;
 };
 
 export default Home;

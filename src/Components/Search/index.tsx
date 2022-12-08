@@ -10,7 +10,7 @@ const Search: React.FC = () => {
   const [value, setValue] = React.useState('');
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const onClickClear = () => {
+  const onClickClear = (event: React.MouseEvent<SVGSVGElement>) => {
     dispatch(setSearchValue(''));
     setValue('');
     if(inputRef.current){
@@ -25,7 +25,7 @@ const Search: React.FC = () => {
     [],
   );
 
-  const onChangeInput = (event:any) => {
+  const onChangeInput = (event:React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
