@@ -13,6 +13,15 @@ type Pizza = {
     rating: number
 }
 
+export enum Status {
+    LOADING = 'loading',
+    SUCCES = 'success',
+    ERROR = 'error',
+}
+
+export type SearchParams = {
+    sortBy: string, order: string, category: string, search: string, currentPage: string
+}
 type FetchPizzasArgs = Record<string, string>;
 //типизурем   санку возвращаемый массив и тип данных
 export const fetchPizzas = createAsyncThunk<Pizza[], Record<string, string>>('pizza/fetchPizzasStatus',
@@ -27,13 +36,13 @@ export const fetchPizzas = createAsyncThunk<Pizza[], Record<string, string>>('pi
 
 interface PizzaSliceState {
     items: PizzaBlockPropTypes[],
-    status: 'loading' | 'succes' | 'error'
+    status: Status
 
 }
 
 const initialState: PizzaSliceState = {
     items: [],
-    status: 'loading' // loading | success | error
+    status: Status.LOADING
 };
 
 const pizzaSlice = createSlice({
@@ -47,15 +56,15 @@ const pizzaSlice = createSlice({
     //Замена try catch
     extraReducers: (builder) => {
         builder.addCase(fetchPizzas.pending, (state) => {
-            state.status = 'loading';
+            state.status = Status.LOADING;
             state.items = [];
         });
         builder.addCase(fetchPizzas.fulfilled, (state, action) => {
             state.items = action.payload;
-            state.status = 'succes';
+            state.status = Status.SUCCES;
         });
         builder.addCase(fetchPizzas.rejected, (state) => {
-            state.status = 'error';
+            state.status = Status.ERROR;
             state.items = [];
         });
     }
