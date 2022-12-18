@@ -1,6 +1,6 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {selectSort, setSort, SorTPropertyEnum} from '../redux/slices/filterSlice';
+import { useDispatch} from 'react-redux';
+import { setSort, SorTPropertyEnum, SortType} from '../redux/slices/filterSlice';
 
 type SortItem = {
     name: string;
@@ -10,6 +10,10 @@ type PopupClick = MouseEvent & {
     path: Node[];
 };
 
+type SorProps = {
+    value:SortType
+}
+
 export const sortList: SortItem[] = [
     {name: 'популярности (DESC)', sortProperty: SorTPropertyEnum.RATING_DESC},
     {name: 'популярности (ASC)', sortProperty: SorTPropertyEnum.RATING_ASC},
@@ -18,10 +22,10 @@ export const sortList: SortItem[] = [
     {name: 'алфавиту (DESC)', sortProperty: SorTPropertyEnum.TITLE_DESC},
     {name: 'алфавиту (ASC)', sortProperty: SorTPropertyEnum.TITLE_ASC},
 ];
+const Sort:React.FC<SorProps> = React.memo(({value}) =>{
 
-function Sort() {
     const dispatch = useDispatch();
-    const sort = useSelector(selectSort);
+
 
     const sortRef = React.useRef<HTMLDivElement>(null);
 
@@ -65,7 +69,7 @@ function Sort() {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setOpen(!open)}>{sort.name}</span>
+                <span onClick={() => setOpen(!open)}>{value.name}</span>
             </div>
             {open && (
                 <div className="sort__popup">
@@ -74,7 +78,7 @@ function Sort() {
                             <li
                                 key={i}
                                 onClick={() => onClickListItem(obj)}
-                                className={sort.sortProperty === obj.sortProperty ? 'active' : ''}>
+                                className={value.sortProperty === obj.sortProperty ? 'active' : ''}>
                                 {obj.name}
                             </li>
                         ))}
@@ -83,6 +87,6 @@ function Sort() {
             )}
         </div>
     );
-}
+})
 
 export default Sort;

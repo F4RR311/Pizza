@@ -1,13 +1,13 @@
 import React from 'react';
-
 type CategoriesPropsType = {
     value: number;
     onChangeCategory: (i: number) => void;
 
 }
 const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
-const Categories: React.FC<CategoriesPropsType> = ({value, onChangeCategory}) => {
+const Categories: React.FC<CategoriesPropsType> = React.memo(({value, onChangeCategory}) => {
 
+    //useWhyDidYouUpdate('Categories',{value, onChangeCategory});
 
     return (
         <div className="categories">
@@ -21,6 +21,6 @@ const Categories: React.FC<CategoriesPropsType> = ({value, onChangeCategory}) =>
         </div>
     );
 
-}
+})
 
 export default Categories;

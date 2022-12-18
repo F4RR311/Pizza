@@ -28,12 +28,11 @@ const Home: React.FC = () => {
     const {items, status} = useSelector(selectPizzaData);
     const {categoryId, sort, currentPage, searchValue} = useSelector(selectFilter);
 
+// убрали перерисовку компонента
+    const onChangeCategory =React.useCallback((id: number) => {
 
-    const onChangeCategory = (id: number) => {
-        //  иной синтаксис
-        // dispatch({type: 'filters/setCategoryId', payload:id});
         dispatch(setCategoryId(id));
-    };
+    }, []);
 
     const onChangePage = (page: number) => {
         dispatch(setCurrentPage(page));
@@ -100,7 +99,7 @@ const Home: React.FC = () => {
 
     const pizzas = items.map((obj: any) => (
 
-            <PizzaBlock {...obj} />
+            <PizzaBlock key={obj.id}{...obj} />
 
     ));
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index}/>);
@@ -109,7 +108,7 @@ const Home: React.FC = () => {
         <div className="container">
             <div className="content__top">
                 <Categories value={categoryId} onChangeCategory={onChangeCategory}/>
-                <Sort/>
+                <Sort value={sort}/>
             </div>
             <h2 className="content__title">Все пиццы</h2>
             {status === 'error' ? (
